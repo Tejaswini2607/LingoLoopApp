@@ -1,6 +1,5 @@
 import { useState, useEffect, Component } from "react"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import "@aws-amplify/ui-react/styles.css"
 
 import WelcomePage from "./components/WelcomePage"
 import Dashboard from "./components/Dashboard"
