@@ -1,0 +1,57 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "cognito-idp:AdminConfirmSignUp",
+                "cognito-idp:AdminCreateUser",
+                "cognito-idp:AdminGetUser",
+                "cognito-idp:AdminInitiateAuth",
+                "cognito-idp:AdminUserGlobalSignOut",
+                "cognito-idp:ConfirmSignUp",
+                "cognito-idp:ForgotPassword",
+                "cognito-idp:GetUser",
+                "cognito-idp:ListUsers",
+                "cognito-idp:RespondToAuthChallenge",
+                "cognito-idp:SignUp",
+                "cognito-idp:UpdateUserAttributes"
+            ],
+            "Resource": [
+                "arn:aws:cognito-idp:ap-south-1:*:userpool/ap-south-1_foLEf6VSu"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:PutObject",
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "s3:ListBucket"
+            ],
+            "Resource": [
+                "arn:aws:s3:::your-s3-bucket-name",
+                "arn:aws:s3:::your-s3-bucket-name/*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "transcribe:StartTranscriptionJob",
+                "transcribe:GetTranscriptionJob",
+                "transcribe:DeleteTranscriptionJob",
+                "transcribe:ListTranscriptionJobs",
+                "transcribe:StartStreamTranscription"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "polly:SynthesizeSpeech",
+                "polly:DescribeVoices"
+            ],
+            "Resource": "*"
+        }
+    ]
+} 

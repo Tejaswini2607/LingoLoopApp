@@ -1,0 +1,33 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-speechortextapp-dev-ada73-authRole",
+      "UnauthRoleArn": "arn:aws:iam::058264194661:role/amplify-speechortextapp-dev-ada73-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::058264194661:role/amplify-speechortextapp-dev-ada73-authRole",
+      "Region": "ap-south-1",
+      "DeploymentBucketName": "amplify-speechortextapp-dev-ada73-deployment",
+      "UnauthRoleName": "amplify-speechortextapp-dev-ada73-unauthRole",
+      "StackName": "amplify-speechortextapp-dev-ada73",
+      "StackId": "arn:aws:cloudformation:ap-south-1:058264194661:stack/amplify-speechortextapp-dev-ada73/5f8eeef0-155d-11f0-a39a-0a31fdb92b91",
+      "AmplifyAppId": "d3bhubu2wfcxk3"
+    },
+    "categories": {
+      "auth": {
+        "speechortextapp47cbd091": {}
+      },
+      "function": {
+        "S3Trigger627ad9f6": {
+          "deploymentBucketName": "amplify-speechortextapp-dev-ada73-deployment",
+          "s3Key": "amplify-builds/S3Trigger627ad9f6-74676b66756663423756-build.zip"
+        }
+      },
+      "storage": {
+        "autogen": {}
+      },
+      "predictions": {
+        "texttospeech": {},
+        "speechtotext": {}
+      }
+    }
+  }
+}
