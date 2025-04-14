@@ -219,7 +219,7 @@ const TextToSpeech = () => {
       <div className="text-center mb-4">
         <FontAwesomeIcon icon={faVolumeUp} size="3x" className="text-primary mb-3 animate__animated animate__pulse animate__infinite" />
         <h3 className="animate__animated animate__fadeInDown">Text to Speech</h3>
-        <p className="text-muted animate__animated animate__fadeInUp">Convert your text to speech using Web Speech API</p>
+        <p className="text-muted animate__animated animate__fadeInUp">Convert your text to speech using LingoLoop</p>
       </div>
 
       {!isWebSpeechSupported && (

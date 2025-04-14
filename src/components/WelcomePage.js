@@ -5,11 +5,12 @@ import {
   faMicrophone, 
   faVolumeUp,
   faLanguage,
-  faRocket
+  faRocket,
+  faSignInAlt
 } from "@fortawesome/free-solid-svg-icons"
 import "animate.css"
 
-const WelcomePage = () => {
+const WelcomePage = ({ user }) => {
   return (
     <Container className="welcome-container animate__animated animate__fadeIn">
       <Row className="mb-5">
@@ -21,18 +22,36 @@ const WelcomePage = () => {
               className="text-primary mb-4 animate__animated animate__pulse animate__infinite" 
             />
             <h1 className="display-4 mb-3">Welcome to LingoLoop</h1>
-            <p className="lead mb-4">Convert speech to text and text to speech with ease</p>
+            <p className="lead mb-4">
+              {user 
+                ? `Hello ${user.username}! Ready to convert speech to text and text to speech?`
+                : "Convert speech to text and text to speech with ease"
+              }
+            </p>
           </div>
-          <Button 
-            as={Link} 
-            to="/dashboard" 
-            variant="primary" 
-            size="lg" 
-            className="mt-3 animate__animated animate__fadeInUp animate__delay-1s"
-          >
-            <FontAwesomeIcon icon={faRocket} className="me-2" />
-            Get Started
-          </Button>
+          {user ? (
+            <Button 
+              as={Link} 
+              to="/dashboard" 
+              variant="primary" 
+              size="lg" 
+              className="mt-3 animate__animated animate__fadeInUp animate__delay-1s"
+            >
+              <FontAwesomeIcon icon={faRocket} className="me-2" />
+              Go to Dashboard
+            </Button>
+          ) : (
+            <Button 
+              as={Link} 
+              to="/dashboard" 
+              variant="primary" 
+              size="lg" 
+              className="mt-3 animate__animated animate__fadeInUp animate__delay-1s"
+            >
+              <FontAwesomeIcon icon={faSignInAlt} className="me-2" />
+              Sign In to Get Started
+            </Button>
+          )}
         </Col>
       </Row>
 
@@ -47,16 +66,16 @@ const WelcomePage = () => {
               />
               <Card.Title className="h4 mb-3">Speech to Text</Card.Title>
               <Card.Text className="text-muted">
-                Record your voice and convert it to text using Web Speech API. Perfect for note-taking, transcriptions,
+                Record your voice and convert it to text using LingoLoop. Perfect for note-taking, transcriptions,
                 and more.
               </Card.Text>
               <Button 
                 as={Link} 
-                to="/dashboard/speech-to-text" 
+                to={user ? "/dashboard/speech-to-text" : "/dashboard"} 
                 variant="outline-primary" 
                 className="mt-3"
               >
-                Try Speech to Text
+                {user ? "Try Speech to Text" : "Sign In to Try"}
               </Button>
             </Card.Body>
           </Card>
@@ -71,15 +90,15 @@ const WelcomePage = () => {
               />
               <Card.Title className="h4 mb-3">Text to Speech</Card.Title>
               <Card.Text className="text-muted">
-                Convert your text to natural-sounding speech using Web Speech API. Choose from multiple voices and languages.
+                Convert your text to natural-sounding speech using LingoLoop. Choose from multiple voices and languages.
               </Card.Text>
               <Button 
                 as={Link} 
-                to="/dashboard/text-to-speech" 
+                to={user ? "/dashboard/text-to-speech" : "/dashboard"} 
                 variant="outline-primary" 
                 className="mt-3"
               >
-                Try Text to Speech
+                {user ? "Try Text to Speech" : "Sign In to Try"}
               </Button>
             </Card.Body>
           </Card>

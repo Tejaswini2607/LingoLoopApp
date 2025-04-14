@@ -1,9 +1,11 @@
 "use client"
 
-import { Navbar, Nav, Container } from "react-bootstrap"
+import { Navbar, Nav, Container, Button } from "react-bootstrap"
 import { Link } from "react-router-dom"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faUser, faSignOutAlt } from "@fortawesome/free-solid-svg-icons"
 
-const Navigation = () => {
+const Navigation = ({ signOut, user }) => {
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container>
@@ -16,10 +18,26 @@ const Navigation = () => {
             <Nav.Link as={Link} to="/">
               Home
             </Nav.Link>
-              <Nav.Link as={Link} to="/dashboard">
-                Dashboard
-              </Nav.Link>
+            <Nav.Link as={Link} to="/dashboard">
+              Dashboard
+            </Nav.Link>
           </Nav>
+          {user && (
+            <Nav>
+              <Nav.Item className="d-flex align-items-center text-light me-3">
+                <FontAwesomeIcon icon={faUser} className="me-2" />
+                {user.username}
+              </Nav.Item>
+              <Button 
+                variant="outline-light" 
+                onClick={signOut}
+                className="d-flex align-items-center"
+              >
+                <FontAwesomeIcon icon={faSignOutAlt} className="me-2" />
+                Sign Out
+              </Button>
+            </Nav>
+          )}
         </Navbar.Collapse>
       </Container>
     </Navbar>
